@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--
+  <bean id="googleBooksEndpointsFactory" class="com.luxoft.libraryservice.library.googlebooks.endpoint.GoogleBooksEndpointsFactory">
+  <constructor-arg name="baseURL" value="${com.luxoft.libraryservice.library.googleBooks.baseURL}"/>
+  </bean>
+  <bean id="googleBooksRestTemplateFactory" class="com.luxoft.libraryservice.rest.RestTemplateFactory">
+    <constructor-arg name="environmentName" value="${deploy.environment.name'}"/>
+    <constructor-arg name="maxConnectionsTotal" value="${com.libraryservice.rest.max.connections.total}"/>
+    <constructor-arg name="maxConnectionsPerRoute" value="${com.libraryservice.rest.max.connections.per.route}"/>
+    <constructor-arg name="timeToLive" value="${com.libraryservice.rest.connection.time.to.live.in.seconds}"/>
+    <constructor-arg name="errorHandler">
+      <bean class="com.luxoft.libraryservice.library.googlebooks.endpoint.ResponseErrorHandler" />
+    </constructor-arg>
+    <property name="connectionRequestTimeout" value="${com.libraryservice.rest.connection.request.timeout}"/>
+  </bean>
+
+  <bean id="booksRetriver" class="com.luxoft.libraryservice.library.googlebooks.endpoint.GoogleBooksRetriver">
+     <constructor-arg name="googleBooksEndpointsFactory" ref="googleBooksEndpointsFactory"/>
+  <constructor-arg name="restRequestFactory">
+    <bean class="com.luxoft.libraryservice.rest.RestRequestFactory">
+      <constructor-arg name="restTemplate">
+        <bean factory-bean="googleBooksRestTemplateFactory" factory-method="create"/>
+      </constructor-arg>
+    </bean>
+  </constructor-arg>
+  </bean>
+
+  <bean id="booksService" class="com.luxoft.libraryservice.library.googlebooks.GoogleBooksService">
+    <property name="booksRetriver" ref="booksRetriver"/>
+  </bean>
+-->
+</beans>
