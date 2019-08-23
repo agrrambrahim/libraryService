@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import com.google.common.collect.Lists;
-import com.luxoft.libraryservice.web.ResponseElementDTO;
+import com.luxoft.libraryservice.web.dto.ResponseElementDTO;
 
 @Entity
 @Table(name = "medias")

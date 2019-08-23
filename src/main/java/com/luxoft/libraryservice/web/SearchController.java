@@ -1,7 +1,5 @@
 package com.luxoft.libraryservice.web;
 
-import javax.annotation.Resource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,25 +7,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.luxoft.libraryservice.library.LibraryService;
-import com.luxoft.libraryservice.studio.StudioService;
+import com.luxoft.libraryservice.searchservice.SearchService;
+import com.luxoft.libraryservice.web.dto.Response;
+import com.luxoft.libraryservice.web.dto.ResponseElementsOrdering;
 
 @RestController
 @RequestMapping(path = "/libraryservice")
 public class SearchController {
 
-    @Resource
-    @Qualifier("libraryService")
-    private LibraryService libraryService;
     @Autowired
-    private StudioService studioService;
+    @Qualifier(value = "searchService")
+    private SearchService searchService;
     @Autowired
     private ResponseElementsOrdering responseElementsOrdering;
-
     @GetMapping(path = "/search")
     public Response getEntryByName(@RequestParam String input) {
-
-        Response response = libraryService.searchForMediaBy(input);
+        //to do :  validate input (check content security,...)
+        Response response = searchService.searchForMediaBy(input);
         return responseElementsOrdering.sort(response);
     }
 }
