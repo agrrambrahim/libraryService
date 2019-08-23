@@ -18,3 +18,10 @@ Or go directly to Actuator management endpoints = http://localhost:8080/manage
 
 user.name=monitor
 password=Monitor@123
+
+
+# Uncompleted tasks : 
+Exposing a specific endpoint for upstreams response time metrics 
+# Remaining tasks : 
+Refactor and remove the "Legacy" on some classes
+Fix some broken principles 
